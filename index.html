@@ -10,22 +10,72 @@
 <body>
   <div class="demo-banner" role="note">※これはデザイン検討用のデモ画面です</div>
 
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-brand" href="index.html">
+        <span class="site-brand__name">二宮内科医院</span>
+        <span class="site-brand__tag">京都府宇治市小倉町の内科クリニック</span>
+      </a>
+      <div class="site-header__actions">
+        <a class="btn-tel" href="tel:0774283101">TEL 0774-28-3101</a>
+        <a class="btn-reserve" href="#">WEB予約はこちら</a>
+      </div>
+    </div>
+  </header>
+
   <main class="page">
-    <section class="hero">
+    <section class="hero" aria-label="メインビジュアル">
       <div class="hero-inner">
-        <h1>診療のご案内</h1>
-        <p class="sub">宇治市の内科クリニック</p>
+        <p class="hero__eyebrow">宇治市の内科クリニック</p>
+        <h1>二宮内科医院</h1>
+        <p class="sub">診療のご案内</p>
+        <div class="hero__ctas">
+          <a class="btn-reserve" href="#">WEB予約はこちら</a>
+          <a class="btn-tel" href="tel:0774283101">お電話でのお問い合わせ</a>
+        </div>
       </div>
     </section>
 
-    <section class="block">
+    <div class="info-strip" aria-label="医院の概要">
+      <div class="info-card">
+        <p class="info-card__label">TEL</p>
+        <p><a href="tel:0774283101">0774-28-3101</a></p>
+      </div>
+      <div class="info-card">
+        <p class="info-card__label">アクセス</p>
+        <p>〒611-0042<br>京都府宇治市小倉町南堀池８－５<br>近鉄小倉駅より徒歩10分<br><a href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E9%83%BD%E5%BA%9C%E5%AE%87%E6%B2%BB%E5%B8%82%E5%B0%8F%E5%80%89%E7%94%BA%E5%8D%97%E5%A0%80%E6%B1%A0%EF%BC%98%EF%BC%8D%EF%BC%95">Googleマップで見る</a></p>
+      </div>
+      <div class="info-card">
+        <p class="info-card__label">診療時間</p>
+        <p><a href="#hours">診療時間表を見る</a></p>
+      </div>
+      <div class="info-card">
+        <p class="info-card__label">自費・予防</p>
+        <p><a href="jihi.html">自費診療のご案内</a></p>
+      </div>
+    </div>
+
+    <nav class="quick-nav" aria-label="ページ内リンク">
+      <p class="quick-nav__title">CONTENTS</p>
+      <ul>
+        <li><a href="#message">ご挨拶・理念</a></li>
+        <li><a href="#symptoms">ご相談ください（症状）</a></li>
+        <li><a href="#vaccine">予防接種</a></li>
+        <li><a class="quick-nav__featured" href="jihi.html">自費診療</a></li>
+        <li><a href="#consult">予約・お電話</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a href="#hours">診療時間</a></li>
+      </ul>
+    </nav>
+
+    <section class="block" id="message">
       <h2>地域の皆さまの“かかりつけ医”として</h2>
       <p>当クリニックは、皆さまの健康の“総合窓口”として、小さな異変から慢性的な疾患まで、幅広く対応いたします。</p>
       <p>「このくらいなら大丈夫」と自己判断せず、「なんとなく調子が悪い」と感じたら、どうぞ遠慮なくご相談ください。</p>
       <p class="center strong">往診ご相談ください</p>
     </section>
 
-    <section class="block">
+    <section class="block" id="symptoms">
       <h2>このような症状の方はご相談ください</h2>
       <ul>
         <li>かぜ（ねつ・のどが痛い・せき・はな・くしゃみ・頭痛など）</li>
@@ -42,7 +92,7 @@
       </ul>
     </section>
 
-    <section class="block">
+    <section class="block" id="lifestyle">
       <h2>生活習慣病について</h2>
       <p>生活習慣病について不安や相談などある方はぜひお越しください。</p>
       <p>病院から診療所でくすりをもらうように言われた患者さんは紹介状、おくすり手帳などお持ちください。</p>
@@ -53,7 +103,7 @@
       </ul>
     </section>
 
-    <section class="block">
+    <section class="block" id="diseases">
       <h2>一般内科的疾患</h2>
       <h3>急性疾患</h3>
       <p>風邪<br>インフルエンザ<br>扁桃炎<br>肺炎気管支炎<br>胃腸炎（腹痛、下痢、吐き気）<br>尿道・膀胱炎　など</p>
@@ -62,14 +112,14 @@
       <p class="strong">受診歴の有無に関わらず<br>発熱患者を受け入れております。</p>
     </section>
 
-    <section class="block">
+    <section class="block" id="checkup">
       <h2>各種健康診断</h2>
       <p>特定健診、肝炎ウイルス検診、大腸がん検診、前立腺がん検診、胃がんリスク検診等。<br>そのほかの検診については適宜ご相談ください。</p>
       <p>・自費診療<br>腫瘍マーカーの検査(採血)<br>男性:CEA,AFP,CA19-9,PSA 9550円<br>PSAのみ　6570円</p>
       <p>女性:CEA,AFP,CA19-9,CA125 9550円</p>
     </section>
 
-    <section class="block">
+    <section class="block" id="tests">
       <h2>各種検査</h2>
       <p>・長谷川式認知症スケール（改訂長谷川式簡易知能評価スケール）<br>物忘れが気になる方、記憶障害等がご不安な方。</p>
       <p>・心電図検査<br>不整脈や虚血性心疾患が疑われる方。<br>症状: 動悸、脈が飛ぶ、胸が痛い。</p>
@@ -78,7 +128,7 @@
       <p>・簡易PSG(ポリソミノグラフィー)検査<br>家族から寝ている間にいびきをかいている、呼吸が止まっていると指摘された方。顎が小さい、舌が大きいと言われる方。高血圧や心房細動と指摘された方。<br>検査結果によってはマウスピースやCPAPをご案内します。</p>
     </section>
 
-    <section class="block">
+    <section class="block" id="vaccine">
       <h2>各種予防接種</h2>
       <p>予約でうけたまわります。お電話またはメールでお問い合わせください。</p>
       <ul>
@@ -118,7 +168,7 @@
       <p>小児ワクチン、海外渡航に必要なワクチン（A型肝炎、黄熱など）については個別にご相談ください。</p>
     </section>
 
-    <section class="block contact">
+    <section class="block contact" id="consult">
       <h2>自費診療</h2>
       <p><a href="jihi.html">自費診療について詳しく知りたい</a></p>
       <p>お電話からのお問い合わせはこちら</p>
@@ -126,7 +176,7 @@
       <p><a href="#">WEB予約はこちら</a></p>
     </section>
 
-    <section class="block">
+    <section class="block" id="access">
       <table>
         <tbody>
           <tr>
@@ -135,14 +185,15 @@
           </tr>
           <tr>
             <th>アクセス</th>
-            <td>〒611-0042<br>京都府宇治市小倉町南堀池８－５<br>近鉄小倉駅より徒歩10分</td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E9%83%BD%E5%BA%9C%E5%AE%87%E6%B2%BB%E5%B8%82%E5%B0%8F%E5%80%89%E7%94%BA%E5%8D%97%E5%A0%80%E6%B1%A0%EF%BC%98%EF%BC%8D%EF%BC%95">〒611-0042<br>京都府宇治市小倉町南堀池８－５<br>近鉄小倉駅より徒歩10分<br>（タップでGoogleマップ）</a></td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <section class="block">
-      <table>
+    <section class="block" id="hours">
+      <h2>診療時間</h2>
+      <table aria-label="診療時間">
         <thead>
           <tr>
             <th></th>
@@ -164,7 +215,7 @@
             <td>/</td>
             <td>●</td>
             <td>●</td>
-            <td>⚫︎</td>
+            <td>●</td>
             <td>/</td>
             <td>/</td>
           </tr>
@@ -183,12 +234,26 @@
       </table>
       <p>※お時間に間に合わない方は別途ご相談ください。</p>
     </section>
+
+    <aside class="cta-strip" aria-label="お電話・WEBでのご予約">
+      <p>お電話でのご予約・お問い合わせ</p>
+      <p class="cta-strip__tel"><a href="tel:0774283101">TEL 0774-28-3101</a></p>
+      <p>WEBでのご予約はこちら</p>
+      <div class="cta-strip__actions">
+        <a class="btn-reserve" href="#">予約サイトへ</a>
+      </div>
+    </aside>
   </main>
+
+  <div class="mobile-cta">
+    <a class="btn-tel" href="tel:0774283101">電話する</a>
+    <a class="btn-reserve" href="#">WEB予約</a>
+  </div>
 
   <footer class="footer">
     <p>京都府宇治市小倉町の内科クリニック</p>
     <p class="footer-name">二宮内科医院</p>
-    <p>Copyright</p>
+    <p class="footer__copy">Copyright</p>
   </footer>
 </body>
 </html>

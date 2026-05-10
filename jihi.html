@@ -10,11 +10,28 @@
 <body>
   <div class="demo-banner" role="note">※これはデザイン検討用のデモ画面です</div>
 
-  <main class="page">
-    <section class="hero">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-brand" href="index.html">
+        <span class="site-brand__name">二宮内科医院</span>
+        <span class="site-brand__tag">自費診療のご案内</span>
+      </a>
+      <div class="site-header__actions">
+        <a class="btn-tel" href="tel:0774283101">TEL 0774-28-3101</a>
+        <a class="btn-reserve" href="#">WEB予約はこちら</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page page--sub">
+    <section class="hero" aria-label="自費診療">
       <div class="hero-inner">
+        <p class="hero__eyebrow">二宮内科医院</p>
         <h1>自費診療</h1>
-        <p class="sub">二宮内科医院</p>
+        <div class="hero__ctas">
+          <a class="btn-reserve" href="#">WEB予約はこちら</a>
+          <a class="btn-tel" href="tel:0774283101">お電話でのお問い合わせ</a>
+        </div>
       </div>
     </section>
 
@@ -82,13 +99,27 @@
       <p>・メトグルコ(メトホルミン):30錠</p>
     </section>
 
-    <section class="block">
-      <p><a href="index.html">診療案内ページへ戻る</a></p>
+    <section class="block back-link">
+      <p><a href="index.html">← 診療案内ページへ戻る</a></p>
     </section>
+
+    <aside class="cta-strip" aria-label="お電話・WEBでのご予約">
+      <p>お電話でのご予約・お問い合わせ</p>
+      <p class="cta-strip__tel"><a href="tel:0774283101">TEL 0774-28-3101</a></p>
+      <p>WEBでのご予約はこちら</p>
+      <div class="cta-strip__actions">
+        <a class="btn-reserve" href="#">予約サイトへ</a>
+      </div>
+    </aside>
   </main>
 
+  <div class="mobile-cta">
+    <a class="btn-tel" href="tel:0774283101">電話する</a>
+    <a class="btn-reserve" href="#">WEB予約</a>
+  </div>
+
   <footer class="footer">
-    <p>Copyright 2026 yk.cho27@gmail.com</p>
+    <p class="footer__copy">Copyright 2026 yk.cho27@gmail.com</p>
   </footer>
 </body>
 </html>
