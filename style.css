@@ -1,0 +1,168 @@
+:root {
+  --text: #1a1a1a;
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --line: #b8c8da;
+  --accent: #0b579f;
+  --banner: #ffe08a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Yu Gothic UI", "Meiryo", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.demo-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  background: var(--banner);
+  border-bottom: 2px solid #8f6a00;
+  font-weight: 700;
+  padding: 10px 8px;
+}
+
+.page {
+  width: min(980px, 94%);
+  margin: 58px auto 0;
+}
+
+.hero {
+  background: linear-gradient(rgba(12, 61, 108, 0.65), rgba(12, 61, 108, 0.65)),
+    url("https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1600&q=80")
+      center/cover no-repeat;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.hero-inner {
+  padding: 60px 28px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.sub {
+  margin: 0;
+  font-weight: 700;
+}
+
+.block {
+  margin-top: 18px;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  padding: 28px 24px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  color: #0f2f56;
+}
+
+h3 {
+  margin: 14px 0 6px;
+  font-size: 1.35rem;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.3em;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.center {
+  text-align: center;
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.contact .tel a {
+  font-size: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 10px;
+  vertical-align: top;
+}
+
+th {
+  background: #e8f0f9;
+}
+
+.footer {
+  margin-top: 22px;
+  padding: 36px 10px;
+  text-align: center;
+  color: #fff;
+  background: #103a68;
+}
+
+.footer p {
+  margin: 0 0 4px;
+}
+
+.footer-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 17px;
+  }
+
+  .page {
+    margin-top: 52px;
+  }
+
+  .hero-inner,
+  .block {
+    padding: 22px 16px;
+  }
+
+  .contact .tel a {
+    font-size: 1.55rem;
+  }
+}
