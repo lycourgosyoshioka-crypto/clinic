@@ -1147,8 +1147,8 @@ button:focus-visible {
   }
 
   body {
-    font-size: 16px;
-    line-height: 1.95;
+    font-size: 15px;
+    line-height: 1.85;
   }
 
   .topbar,
@@ -1169,8 +1169,13 @@ button:focus-visible {
     height: 30px;
   }
 
+  /* ヒーロー */
   .hero {
-    min-height: 300px;
+    min-height: 280px;
+  }
+
+  .hero__catch {
+    font-size: 0.95rem;
   }
 
   .hero__actions {
@@ -1182,6 +1187,12 @@ button:focus-visible {
     width: 100%;
   }
 
+  /* セクション見出し */
+  .section__title {
+    font-size: 1.35rem;
+  }
+
+  /* お知らせ */
   .news-item {
     flex-direction: column;
     gap: 4px;
@@ -1189,12 +1200,23 @@ button:focus-visible {
 
   .news-item__text {
     flex: auto;
+    font-size: 0.88rem;
   }
 
+  /* 特徴カード */
   .features {
     grid-template-columns: 1fr;
   }
 
+  .feature-card__title {
+    font-size: 1rem;
+  }
+
+  .feature-card__text {
+    font-size: 0.88rem;
+  }
+
+  /* 診療案内カード */
   .medical-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -1210,27 +1232,69 @@ button:focus-visible {
   }
 
   .medical-card__title {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .medical-card__desc {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
+  .medical-note {
+    font-size: 0.88rem;
+    padding: 14px 16px;
+  }
+
+  /* 詳細セクション */
+  .detail-block {
+    padding: clamp(20px, 4vw, 32px);
+  }
+
+  .detail-block__title {
+    font-size: 1.15rem;
+  }
+
+  .detail-block h3 {
+    font-size: 0.98rem;
+  }
+
+  .detail-block p {
+    font-size: 0.9rem;
+  }
+
+  .detail-list li {
+    font-size: 0.88rem;
+    padding: 7px 0 7px 18px;
+  }
+
+  .detail-qa p {
+    font-size: 0.86rem;
+  }
+
+  .detail-block__highlight {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+
+  /* 自費診療CTA */
+  .jihi-cta__desc {
+    font-size: 0.88rem;
+  }
+
+  /* 診療時間テーブル */
   .schedule-table {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 
   .schedule-table th,
   .schedule-table td {
-    padding: 10px 5px;
+    padding: 10px 4px;
   }
 
   .schedule-table thead th:first-child,
   .schedule-table tbody th {
-    min-width: 110px;
-    padding-left: 8px;
-    font-size: 0.78rem;
+    min-width: 100px;
+    padding-left: 6px;
+    font-size: 0.72rem;
   }
 
   .mobile-cta {
