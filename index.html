@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <!-- 2段目: ロゴ -->
+    <!-- 2段目: ロゴ + 文字サイズ -->
     <div class="brandbar">
       <div class="brandbar__inner">
         <a class="brandbar__logo" href="index.html">
@@ -43,6 +43,12 @@
             <span class="brandbar__sub">NINOMIYA INTERNAL MEDICINE CLINIC</span>
           </span>
         </a>
+        <div class="fontsize" id="fontsizeCtrl" aria-label="文字サイズ変更">
+          <span class="fontsize__label">文字サイズ</span>
+          <button class="fontsize__btn is-active" data-size="normal" aria-label="標準">標準</button>
+          <button class="fontsize__btn" data-size="large" aria-label="大">大</button>
+          <button class="fontsize__btn" data-size="xlarge" aria-label="特大">特大</button>
+        </div>
       </div>
     </div>
 
@@ -133,21 +139,9 @@
           <h2 class="section__title">お知らせ</h2>
           <span class="section__title-en">news</span>
         </div>
-        <ul class="news-list">
-          <li class="news-item">
-            <time class="news-item__date" datetime="2026-05-01">2026.05.01</time>
-            <span class="news-item__badge">お知らせ</span>
-            <p class="news-item__text">ホームページをリニューアルしました。</p>
-          </li>
-          <li class="news-item">
-            <time class="news-item__date" datetime="2026-04-01">2026.04.01</time>
-            <span class="news-item__badge">診療</span>
-            <p class="news-item__text">各種予防接種を随時受け付けております。お電話にてご予約ください。</p>
-          </li>
-          <li class="news-item">
-            <time class="news-item__date" datetime="2026-03-15">2026.03.15</time>
-            <span class="news-item__badge">お知らせ</span>
-            <p class="news-item__text">自費診療（予防内服・AGA治療・メディカルダイエットなど）のご案内ページを公開しました。</p>
+        <ul class="news-list" id="newsList">
+          <li class="news-item news-item--loading">
+            <p class="news-item__text">読み込み中...</p>
           </li>
         </ul>
       </div>
@@ -488,6 +482,82 @@
         if (mobileMenu.classList.contains('is-open')) toggleMenu();
       });
     });
+
+    (function() {
+      var ctrl = document.getElementById('fontsizeCtrl');
+      var saved = localStorage.getItem('fontSize') || 'normal';
+      if (saved === 'small' || saved === 'medium') saved = 'normal';
+
+      function applySize(size) {
+        document.documentElement.classList.remove('fs-normal', 'fs-large', 'fs-xlarge');
+        document.documentElement.classList.add('fs-' + size);
+        ctrl.querySelectorAll('.fontsize__btn').forEach(function(b) {
+          b.classList.toggle('is-active', b.getAttribute('data-size') === size);
+        });
+        localStorage.setItem('fontSize', size);
+      }
+
+      applySize(saved);
+
+      ctrl.addEventListener('click', function(e) {
+        var btn = e.target.closest('.fontsize__btn');
+        if (!btn) return;
+        applySize(btn.getAttribute('data-size'));
+      });
+    })();
+
+    (function() {
+      var list = document.getElementById('newsList');
+      var API = 'https://ninomiya-clinic.microcms.io/api/v1/news';
+      var KEY = 'hFBZemGlAksmqkQSGYzJ08sM2fnPqhrfJMN9';
+
+      function formatDate(iso) {
+        var d = new Date(iso);
+        var y = d.getFullYear();
+        var m = ('0' + (d.getMonth() + 1)).slice(-2);
+        var day = ('0' + d.getDate()).slice(-2);
+        return y + '.' + m + '.' + day;
+      }
+
+      function isoDate(iso) {
+        return iso.slice(0, 10);
+      }
+
+      function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      }
+
+      fetch(API + '?limit=5&orders=-publishedAt', {
+        headers: { 'X-MICROCMS-API-KEY': KEY }
+      })
+      .then(function(res) {
+        if (!res.ok) throw new Error('API error: ' + res.status);
+        return res.json();
+      })
+      .then(function(data) {
+        if (!data.contents || data.contents.length === 0) {
+          list.innerHTML = '<li class="news-item"><p class="news-item__text">現在お知らせはありません</p></li>';
+          return;
+        }
+        var html = '';
+        data.contents.forEach(function(item) {
+          var date = item.publishedAt || item.createdAt;
+          var category = (item.category && item.category.name) ? item.category.name : 'お知らせ';
+          var title = item.title || '';
+          html += '<li class="news-item">'
+            + '<time class="news-item__date" datetime="' + isoDate(date) + '">' + formatDate(date) + '</time>'
+            + '<span class="news-item__badge">' + escapeHtml(category) + '</span>'
+            + '<p class="news-item__text">' + escapeHtml(title) + '</p>'
+            + '</li>';
+        });
+        list.innerHTML = html;
+      })
+      .catch(function() {
+        list.innerHTML = '<li class="news-item"><p class="news-item__text">現在お知らせはありません</p></li>';
+      });
+    })();
   </script>
 </body>
 </html>

@@ -37,14 +37,16 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--banner-h) + var(--header-h) + 16px);
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font);
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.9;
   color: var(--c-text);
   background: var(--c-bg);
+  overflow-x: hidden;
 }
 
 body.no-scroll {
@@ -99,7 +101,7 @@ img {
 .topbar {
   background: var(--c-primary-dark);
   color: rgba(255, 255, 255, 0.92);
-  font-size: 0.78rem;
+  font-size: 12.5px;
   line-height: 1.4;
 }
 
@@ -134,7 +136,7 @@ img {
   display: inline-flex;
   align-items: center;
   padding: 3px 12px;
-  font-size: 0.72rem;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--c-primary-dark);
   background: #fff;
@@ -152,19 +154,20 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .topbar__holiday {
   white-space: nowrap;
-  font-size: 0.75rem;
+  font-size: 12px;
 }
 
 .topbar__schedule-btn {
   display: inline-flex;
   align-items: center;
   padding: 3px 14px;
-  font-size: 0.72rem;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--c-white);
   background: var(--c-primary);
@@ -182,7 +185,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 1.05rem;
+  font-size: 16.8px;
   font-weight: 800;
   color: var(--c-white);
   text-decoration: none;
@@ -228,7 +231,7 @@ img {
 
 .brandbar__name {
   display: block;
-  font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+  font-size: clamp(19.2px, 2.8vw, 25.6px);
   font-weight: 900;
   color: var(--c-primary-dark);
   letter-spacing: 0.06em;
@@ -237,11 +240,95 @@ img {
 
 .brandbar__sub {
   display: block;
-  font-size: 0.65rem;
+  font-size: 10.4px;
   font-weight: 600;
   color: var(--c-text-muted);
   letter-spacing: 0.12em;
   margin-top: 2px;
+}
+
+/* ----- 文字サイズ切替 ----- */
+.fontsize {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.fontsize__label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--c-text-muted);
+  white-space: nowrap;
+  margin-right: 2px;
+}
+
+.fontsize__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 30px;
+  padding: 0 8px;
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--c-primary-dark);
+  background: var(--c-primary-light);
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  line-height: 1;
+}
+
+.fontsize__btn:hover {
+  background: #c8dff5;
+}
+
+.fontsize__btn.is-active {
+  color: var(--c-white);
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+}
+
+/* ========== 文字サイズ切替 ========== */
+html.fs-large {
+  font-size: 20.8px;
+}
+
+html.fs-xlarge {
+  font-size: 25.6px;
+}
+
+/* ナビ・操作UIだけpx固定（レイアウト維持） */
+.header,
+.topbar,
+.brandbar,
+.gnav,
+.hamburger,
+.mobile-menu,
+.demo-banner,
+.mobile-cta,
+.fontsize {
+  font-size: 16px;
+}
+
+/* テーブルは控えめに拡大（はみ出し防止） */
+html.fs-large .schedule-table {
+  font-size: 15px;
+}
+html.fs-xlarge .schedule-table {
+  font-size: 16px;
+}
+html.fs-large .schedule-table thead th,
+html.fs-large .schedule-table tbody th {
+  font-size: 14px;
+}
+html.fs-xlarge .schedule-table thead th,
+html.fs-xlarge .schedule-table tbody th {
+  font-size: 15px;
 }
 
 /* ----- 3段目: グローバルナビ ----- */
@@ -308,7 +395,7 @@ img {
 }
 
 .gnav__label {
-  font-size: 0.78rem;
+  font-size: 12.5px;
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
@@ -402,7 +489,7 @@ img {
 .mobile-menu li a {
   display: block;
   padding: 18px 4px;
-  font-size: 1.08rem;
+  font-size: 17.3px;
   font-weight: 700;
   color: var(--c-text);
 }
@@ -417,7 +504,7 @@ img {
   padding: 16px;
   text-align: center;
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 16.8px;
   color: var(--c-white) !important;
   background: var(--c-primary);
   border-radius: var(--radius-sm);
@@ -434,7 +521,7 @@ img {
   padding: 16px;
   text-align: center;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 16.8px;
   color: var(--c-primary-dark) !important;
   background: var(--c-primary-light);
   border-radius: var(--radius-sm);
@@ -1147,7 +1234,7 @@ button:focus-visible {
   }
 
   body {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1.85;
   }
 
@@ -1167,6 +1254,17 @@ button:focus-visible {
   .brandbar__icon svg {
     width: 30px;
     height: 30px;
+  }
+
+  .fontsize__label {
+    display: none;
+  }
+
+  .fontsize__btn {
+    min-width: 32px;
+    height: 26px;
+    font-size: 10.5px;
+    padding: 0 5px;
   }
 
   /* ヒーロー */
@@ -1319,7 +1417,7 @@ button:focus-visible {
     align-items: center;
     justify-content: center;
     padding: 13px 10px;
-    font-size: 0.9rem;
+    font-size: 14.4px;
     font-weight: 800;
     border-radius: var(--radius-sm);
     text-decoration: none;
