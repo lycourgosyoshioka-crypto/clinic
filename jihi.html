@@ -16,9 +16,17 @@
         <span class="site-brand__name">二宮内科医院</span>
         <span class="site-brand__tag">自費診療のご案内</span>
       </a>
-      <div class="site-header__actions">
-        <a class="btn-tel" href="tel:0774283101">TEL 0774-28-3101</a>
-        <a class="btn-reserve" href="https://reserve.peraichi.com/r/3b9daf8d/select_date?course=75106">WEB予約はこちら</a>
+      <div class="site-header__right">
+        <div class="fontsize" id="fontsizeCtrl" aria-label="文字サイズ変更">
+          <span class="fontsize__label">文字サイズ</span>
+          <button class="fontsize__btn is-active" data-size="normal" aria-label="標準">標準</button>
+          <button class="fontsize__btn" data-size="large" aria-label="大">大</button>
+          <button class="fontsize__btn" data-size="xlarge" aria-label="特大">特大</button>
+        </div>
+        <div class="site-header__actions">
+          <a class="btn-tel" href="tel:0774283101">TEL 0774-28-3101</a>
+          <a class="btn-reserve" href="https://reserve.peraichi.com/r/3b9daf8d/select_date?course=75106">WEB予約はこちら</a>
+        </div>
       </div>
     </div>
   </header>
@@ -121,5 +129,30 @@
   <footer class="footer">
     <p class="footer__copy">Copyright &copy; 二宮内科医院 All Rights Reserved.</p>
   </footer>
+
+  <script>
+    (function() {
+      var ctrl = document.getElementById('fontsizeCtrl');
+      var saved = localStorage.getItem('fontSize') || 'normal';
+      if (saved === 'small' || saved === 'medium') saved = 'normal';
+
+      function applySize(size) {
+        document.documentElement.classList.remove('fs-normal', 'fs-large', 'fs-xlarge');
+        document.documentElement.classList.add('fs-' + size);
+        ctrl.querySelectorAll('.fontsize__btn').forEach(function(b) {
+          b.classList.toggle('is-active', b.getAttribute('data-size') === size);
+        });
+        localStorage.setItem('fontSize', size);
+      }
+
+      applySize(saved);
+
+      ctrl.addEventListener('click', function(e) {
+        var btn = e.target.closest('.fontsize__btn');
+        if (!btn) return;
+        applySize(btn.getAttribute('data-size'));
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -311,7 +311,8 @@ html.fs-xlarge {
 .mobile-menu,
 .demo-banner,
 .mobile-cta,
-.fontsize {
+.fontsize,
+.site-header {
   font-size: 16px;
 }
 
@@ -1497,7 +1498,7 @@ button:focus-visible {
 }
 
 .site-brand__name {
-  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-size: clamp(18.4px, 2.5vw, 23.2px);
   font-weight: 800;
   color: var(--c-primary-dark);
   letter-spacing: 0.02em;
@@ -1505,9 +1506,16 @@ button:focus-visible {
 }
 
 .site-brand__tag {
-  font-size: 0.75rem;
+  font-size: 12px;
   color: var(--c-text-muted);
   margin-top: 2px;
+}
+
+.site-header__right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 }
 
 .site-header__actions {
@@ -1523,7 +1531,7 @@ button:focus-visible {
   justify-content: center;
   padding: 10px 16px;
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 14.7px;
   color: var(--c-primary-dark);
   background: var(--c-primary-light);
   border: 1px solid var(--c-border);
@@ -1541,7 +1549,7 @@ button:focus-visible {
   justify-content: center;
   padding: 10px 20px;
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 14.7px;
   color: var(--c-white);
   background: var(--c-primary);
   border: 2px solid var(--c-primary);
@@ -1740,6 +1748,15 @@ button:focus-visible {
   .site-header__inner {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .site-header__right {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .site-header__right .fontsize {
+    justify-content: flex-start;
   }
 
   .site-header__actions {
