@@ -1101,18 +1101,18 @@ html.fs-xlarge {
 
 /* ========== 診療時間・アクセス ========== */
 .schedule-access {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .schedule-block,
 .access-block {
   background: var(--c-white);
+  border: 1px solid var(--c-border);
   border-radius: var(--radius);
-  padding: clamp(24px, 4vw, 36px);
-  box-shadow: 0 4px 20px var(--c-shadow);
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow: 0 2px 12px var(--c-shadow);
 }
 
 .schedule-block__title {
@@ -1286,11 +1286,7 @@ button:focus-visible {
    レスポンシブ
    ============================================ */
 
-@media (max-width: 900px) {
-  .schedule-access {
-    grid-template-columns: 1fr;
-  }
-}
+/* 900px以下: 不要（schedule-accessは常に縦並び） */
 
 @media (max-width: 768px) {
   :root {
