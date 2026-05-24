@@ -1340,6 +1340,10 @@ button:focus-visible {
     display: none;
   }
 
+  .fontsize {
+    margin-right: 52px;
+  }
+
   .fontsize__btn {
     min-width: 32px;
     height: 26px;
@@ -1836,6 +1840,7 @@ button:focus-visible {
 
   .site-header__right .fontsize {
     justify-content: flex-start;
+    margin-right: 0;
   }
 
   .site-header__actions {
@@ -1846,5 +1851,8 @@ button:focus-visible {
   .site-header__actions .btn-reserve {
     flex: 1;
     min-width: 0;
+    font-size: 12.5px;
+    padding: 10px 8px;
+    white-space: nowrap;
   }
 }
