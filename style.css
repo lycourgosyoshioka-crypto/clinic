@@ -316,21 +316,7 @@ html.fs-xlarge {
   font-size: 16px;
 }
 
-/* テーブルは控えめに拡大（はみ出し防止） */
-html.fs-large .schedule-table {
-  font-size: 15px;
-}
-html.fs-xlarge .schedule-table {
-  font-size: 16px;
-}
-html.fs-large .schedule-table thead th,
-html.fs-large .schedule-table tbody th {
-  font-size: 14px;
-}
-html.fs-xlarge .schedule-table thead th,
-html.fs-xlarge .schedule-table tbody th {
-  font-size: 15px;
-}
+/* テーブル・セクション見出しはpx固定で文字サイズ変更の影響を受けない */
 
 /* ----- 3段目: グローバルナビ ----- */
 .gnav {
@@ -1118,7 +1104,7 @@ html.fs-xlarge .schedule-table tbody th {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .schedule-block,
@@ -1130,7 +1116,7 @@ html.fs-xlarge .schedule-table tbody th {
 }
 
 .schedule-block__title {
-  font-size: 1.15rem;
+  font-size: 18.4px;
   font-weight: 800;
   color: var(--c-primary-dark);
   margin-bottom: 18px;
@@ -1146,7 +1132,7 @@ html.fs-xlarge .schedule-table tbody th {
 .schedule-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9rem;
+  font-size: 14.4px;
 }
 
 .schedule-table th,
@@ -1170,14 +1156,14 @@ html.fs-xlarge .schedule-table tbody th {
   background: var(--c-primary);
   color: var(--c-white);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 13.6px;
 }
 
 .schedule-table tbody th {
   background: var(--c-primary-light);
   font-weight: 700;
   color: var(--c-primary-dark);
-  font-size: 0.85rem;
+  font-size: 13.6px;
 }
 
 .schedule-table tbody td {
@@ -1187,7 +1173,7 @@ html.fs-xlarge .schedule-table tbody th {
 
 .schedule-block__note {
   margin-top: 12px;
-  font-size: 0.85rem;
+  font-size: 13.6px;
   color: var(--c-text-muted);
 }
 
@@ -1196,7 +1182,7 @@ html.fs-xlarge .schedule-table tbody th {
 }
 
 .access-dl dt {
-  font-size: 0.8rem;
+  font-size: 12.8px;
   font-weight: 700;
   color: var(--c-primary);
   letter-spacing: 0.06em;
@@ -1208,7 +1194,7 @@ html.fs-xlarge .schedule-table tbody th {
 }
 
 .access-dl dd {
-  font-size: 0.95rem;
+  font-size: 15.2px;
   color: var(--c-text);
   line-height: 1.7;
   margin-left: 0;
@@ -1464,7 +1450,7 @@ button:focus-visible {
 
   /* 診療時間テーブル */
   .schedule-table {
-    font-size: 0.78rem;
+    font-size: 12.5px;
   }
 
   .schedule-table th,
@@ -1476,7 +1462,7 @@ button:focus-visible {
   .schedule-table tbody th {
     min-width: 100px;
     padding-left: 6px;
-    font-size: 0.72rem;
+    font-size: 11.5px;
   }
 
   .mobile-cta {
