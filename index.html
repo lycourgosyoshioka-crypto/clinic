@@ -529,6 +529,31 @@
         return div.innerHTML;
       }
 
+      function sanitizeHtml(html) {
+        var tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        tmp.querySelectorAll('script,style,iframe,object,embed').forEach(function(el) { el.remove(); });
+        return tmp.innerHTML;
+      }
+
+      function toggleAccordion(li) {
+        var body = li.querySelector('.news-item__body');
+        if (!body) return;
+        var isOpen = li.classList.contains('is-expanded');
+        if (isOpen) {
+          body.style.maxHeight = body.scrollHeight + 'px';
+          requestAnimationFrame(function() { body.style.maxHeight = '0'; });
+          li.classList.remove('is-expanded');
+        } else {
+          body.style.maxHeight = body.scrollHeight + 'px';
+          li.classList.add('is-expanded');
+          body.addEventListener('transitionend', function handler() {
+            if (li.classList.contains('is-expanded')) body.style.maxHeight = 'none';
+            body.removeEventListener('transitionend', handler);
+          });
+        }
+      }
+
       fetch(API + '?limit=5&orders=-publishedAt', {
         headers: { 'X-MICROCMS-API-KEY': KEY }
       })
@@ -541,18 +566,43 @@
           list.innerHTML = '<li class="news-item"><p class="news-item__text">現在お知らせはありません</p></li>';
           return;
         }
-        var html = '';
+
+        list.innerHTML = '';
+
         data.contents.forEach(function(item) {
           var date = item.publishedAt || item.createdAt;
           var category = (item.category && item.category.name) ? item.category.name : 'お知らせ';
           var title = item.title || '';
-          html += '<li class="news-item">'
-            + '<time class="news-item__date" datetime="' + isoDate(date) + '">' + formatDate(date) + '</time>'
+          var content = item.content || '';
+          var hasContent = content.trim().length > 0;
+
+          var li = document.createElement('li');
+          li.className = 'news-item' + (hasContent ? ' news-item--has-content' : '');
+
+          var header = document.createElement('div');
+          header.className = 'news-item__header';
+          header.innerHTML =
+            '<time class="news-item__date" datetime="' + isoDate(date) + '">' + formatDate(date) + '</time>'
             + '<span class="news-item__badge">' + escapeHtml(category) + '</span>'
-            + '<p class="news-item__text">' + escapeHtml(title) + '</p>'
-            + '</li>';
+            + '<p class="news-item__text">' + escapeHtml(title)
+            + (hasContent ? ' <span class="news-item__toggle">＋</span>' : '')
+            + '</p>';
+          li.appendChild(header);
+
+          if (hasContent) {
+            var body = document.createElement('div');
+            body.className = 'news-item__body';
+            var inner = document.createElement('div');
+            inner.className = 'news-item__content';
+            inner.innerHTML = sanitizeHtml(content);
+            body.appendChild(inner);
+            li.appendChild(body);
+
+            header.addEventListener('click', function() { toggleAccordion(li); });
+          }
+
+          list.appendChild(li);
         });
-        list.innerHTML = html;
       })
       .catch(function() {
         list.innerHTML = '<li class="news-item"><p class="news-item__text">現在お知らせはありません</p></li>';

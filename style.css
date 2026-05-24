@@ -698,8 +698,8 @@ html.fs-xlarge .schedule-table tbody th {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 8px 14px;
-  padding: 18px 0;
+  gap: 6px 12px;
+  padding: 10px 0;
   border-bottom: 1px solid var(--c-border);
 }
 
@@ -728,8 +728,87 @@ html.fs-xlarge .schedule-table tbody th {
 .news-item__text {
   flex: 1 1 100%;
   font-size: 0.95rem;
+  font-weight: 700;
   color: var(--c-text);
+  line-height: 1.6;
+}
+
+.news-item--has-content .news-item__text {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+/* ----- お知らせアコーディオン ----- */
+.news-item--has-content {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.news-item--has-content:hover {
+  background: var(--c-primary-pale);
+}
+
+.news-item__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px 10px;
+  width: 100%;
+}
+
+.news-item__toggle {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-primary);
+  transition: transform 0.3s;
+  line-height: 1;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.news-item.is-expanded .news-item__toggle {
+  transform: rotate(45deg);
+}
+
+.news-item__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.news-item.is-expanded .news-item__body {
+  padding-top: 4px;
+}
+
+.news-item__content {
+  background: var(--c-primary-pale);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.86rem;
   line-height: 1.7;
+  color: var(--c-text);
+}
+
+.news-item__content p {
+  margin: 0 0 6px;
+}
+
+.news-item__content p:last-child {
+  margin-bottom: 0;
+}
+
+.news-item__content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  margin: 8px 0;
+}
+
+.news-item__content a {
+  color: var(--c-primary);
+  text-decoration: underline;
 }
 
 /* ========== 当院の特徴 ========== */
