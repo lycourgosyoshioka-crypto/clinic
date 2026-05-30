@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>二宮内科医院 | 京都府宇治市小倉町の内科クリニック</title>
+  <title>診療時間・アクセス | 二宮内科医院</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,8 +12,6 @@
 
   <!-- ===== ヘッダー 3段構成 ===== -->
   <header class="header" id="top">
-
-    <!-- 1段目: 情報バー -->
     <div class="topbar">
       <div class="topbar__inner">
         <div class="topbar__left">
@@ -22,7 +20,7 @@
         </div>
         <div class="topbar__right">
           <span class="topbar__holiday">休診日　水曜、火土の夕方、日曜、祝日</span>
-          <a class="topbar__schedule-btn" href="access.html#schedule">診療時間</a>
+          <a class="topbar__schedule-btn" href="#schedule">診療時間</a>
           <a class="topbar__tel" href="tel:0774283101">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             0774-28-3101
@@ -31,7 +29,6 @@
       </div>
     </div>
 
-    <!-- 2段目: ロゴ + 文字サイズ -->
     <div class="brandbar">
       <div class="brandbar__inner">
         <a class="brandbar__logo" href="index.html">
@@ -52,12 +49,11 @@
       </div>
     </div>
 
-    <!-- 3段目: アイコンナビ -->
     <nav class="gnav" id="gnav">
       <div class="gnav__inner">
         <ul class="gnav__list">
           <li>
-            <a href="index.html" class="gnav__item gnav__item--current">
+            <a href="index.html" class="gnav__item">
               <svg class="gnav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
               <span class="gnav__label">ホーム</span>
             </a>
@@ -75,7 +71,7 @@
             </a>
           </li>
           <li>
-            <a href="access.html" class="gnav__item">
+            <a href="access.html" class="gnav__item gnav__item--current">
               <svg class="gnav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <span class="gnav__label">診療時間・アクセス</span>
             </a>
@@ -90,13 +86,11 @@
       </div>
     </nav>
 
-    <!-- ハンバーガー（モバイル） -->
     <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <!-- モバイルメニュー -->
   <div class="mobile-menu" id="mobileMenu">
     <nav>
       <ul>
@@ -112,113 +106,81 @@
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
   <main>
-    <!-- ===== ヒーロー ===== -->
-    <section class="hero">
-      <div class="hero__inner">
-        <p class="hero__label">宇治市小倉町の内科クリニック</p>
-        <h1 class="hero__title">二宮内科医院</h1>
-        <p class="hero__catch">地域の皆さまの"かかりつけ医"として、いつでもお気軽にご相談ください</p>
-        <div class="hero__actions">
-          <a class="btn btn--primary btn--lg" href="https://reserve.peraichi.com/r/3b9daf8d/select_date?course=75106">WEB予約はこちら</a>
-          <a class="btn btn--outline btn--lg" href="tel:0774283101">TEL 0774-28-3101</a>
-        </div>
+    <!-- ===== サブページヒーロー ===== -->
+    <section class="subpage-hero">
+      <div class="subpage-hero__inner">
+        <h1 class="subpage-hero__title">診療時間・アクセス</h1>
+        <p class="subpage-hero__sub">schedule &amp; access</p>
       </div>
     </section>
 
-    <!-- ===== お知らせ ===== -->
-    <section class="section" id="news">
+    <!-- ===== 診療時間・アクセス ===== -->
+    <section class="section section--tinted" id="access">
       <div class="section__inner">
-        <div class="section__heading">
-          <h2 class="section__title">お知らせ</h2>
-          <span class="section__title-en">news</span>
-        </div>
-        <ul class="news-list" id="newsList">
-          <li class="news-item news-item--loading">
-            <p class="news-item__text">読み込み中...</p>
-          </li>
-        </ul>
-      </div>
-    </section>
+        <div class="schedule-access" id="schedule">
+          <div class="schedule-block">
+            <h3 class="schedule-block__title">診療時間</h3>
+            <div class="schedule-table-wrap">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>診療時間</th>
+                    <th>月</th>
+                    <th>火</th>
+                    <th>水</th>
+                    <th>木</th>
+                    <th>金</th>
+                    <th>土</th>
+                    <th>日</th>
+                    <th>祝</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>9:00 〜 12:00（最終受付）</th>
+                    <td>●</td>
+                    <td>●</td>
+                    <td>／</td>
+                    <td>●</td>
+                    <td>●</td>
+                    <td>●</td>
+                    <td>／</td>
+                    <td>／</td>
+                  </tr>
+                  <tr>
+                    <th>17:00 〜 19:30（最終受付）</th>
+                    <td>●</td>
+                    <td>／</td>
+                    <td>／</td>
+                    <td>●</td>
+                    <td>●</td>
+                    <td>／</td>
+                    <td>／</td>
+                    <td>／</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="schedule-block__note">※お時間に間に合わない方は別途ご相談ください。</p>
+          </div>
 
-    <!-- ===== 当院の特徴 ===== -->
-    <section class="section section--tinted" id="features">
-      <div class="section__inner">
-        <div class="section__heading">
-          <h2 class="section__title">当院の特徴</h2>
-          <span class="section__title-en">features</span>
-        </div>
-        <div class="features">
-          <div class="feature-card">
-            <span class="feature-card__num">01</span>
-            <h3 class="feature-card__title">地域のかかりつけ医として<br>幅広く対応</h3>
-            <p class="feature-card__text">風邪や腹痛などの急性疾患から、高血圧・糖尿病・脂質異常症などの生活習慣病まで幅広く対応いたします。「なんとなく調子が悪い」と感じたら、どうぞ遠慮なくご相談ください。</p>
-          </div>
-          <div class="feature-card">
-            <span class="feature-card__num">02</span>
-            <h3 class="feature-card__title">予防医療にも力を入れた<br>健康管理</h3>
-            <p class="feature-card__text">各種予防接種（インフルエンザ・帯状疱疹・HPVなど）や健康診断を通して、病気の予防と早期発見に取り組んでおります。定期的な検診をおすすめしています。</p>
-          </div>
-          <div class="feature-card">
-            <span class="feature-card__num">03</span>
-            <h3 class="feature-card__title">安心の連携医療と<br>往診対応</h3>
-            <p class="feature-card__text">より専門的な検査や治療が必要な場合は、高次医療機関と連携して適切にご紹介いたします。また、通院が困難な方への往診にも対応しておりますので、お気軽にご相談ください。</p>
+          <div class="access-block">
+            <h3 class="schedule-block__title">アクセス</h3>
+            <div class="access-info">
+              <dl class="access-dl">
+                <dt>医院名</dt>
+                <dd>二宮内科医院</dd>
+                <dt>住所</dt>
+                <dd>〒611-0042<br>京都府宇治市小倉町南堀池８－５</dd>
+                <dt>最寄駅</dt>
+                <dd>近鉄小倉駅より徒歩10分</dd>
+                <dt>電話番号</dt>
+                <dd><a href="tel:0774283101">0774-28-3101</a></dd>
+              </dl>
+              <a class="btn btn--outline" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E9%83%BD%E5%BA%9C%E5%AE%87%E6%B2%BB%E5%B8%82%E5%B0%8F%E5%80%89%E7%94%BA%E5%8D%97%E5%A0%80%E6%B1%A0%EF%BC%98%EF%BC%8D%EF%BC%95" target="_blank" rel="noopener">Googleマップで見る →</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ===== 診療案内 ===== -->
-    <section class="section" id="medical">
-      <div class="section__inner">
-        <div class="section__heading">
-          <h2 class="section__title">診療案内</h2>
-          <span class="section__title-en">medical</span>
-        </div>
-        <div class="medical-grid">
-          <a href="medical.html#detail-diseases" class="medical-card">
-            <div class="medical-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.8 2.3A2 2 0 016.7 1h10.6a2 2 0 011.9 1.3l2.5 7.5a2 2 0 01-1.9 2.7H4.2a2 2 0 01-1.9-2.7L4.8 2.3z"/><path d="M12 12.5V23"/><path d="M8 23h8"/></svg>
-            </div>
-            <h3 class="medical-card__title">一般内科</h3>
-            <p class="medical-card__desc">風邪・インフルエンザ・扁桃炎・肺炎・胃腸炎など</p>
-          </a>
-          <a href="medical.html#detail-lifestyle" class="medical-card">
-            <div class="medical-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </div>
-            <h3 class="medical-card__title">生活習慣病</h3>
-            <p class="medical-card__desc">高血圧・糖尿病・脂質異常症・痛風・肥満症</p>
-          </a>
-          <a href="medical.html#detail-vaccine" class="medical-card">
-            <div class="medical-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6l3 3"/><circle cx="12" cy="14" r="8"/></svg>
-            </div>
-            <h3 class="medical-card__title">予防接種</h3>
-            <p class="medical-card__desc">インフルエンザ・帯状疱疹・HPV・肺炎球菌など</p>
-          </a>
-          <a href="medical.html#detail-checkup" class="medical-card">
-            <div class="medical-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
-            </div>
-            <h3 class="medical-card__title">各種健康診断</h3>
-            <p class="medical-card__desc">特定健診・がん検診・腫瘍マーカー検査</p>
-          </a>
-          <a href="medical.html#detail-tests" class="medical-card">
-            <div class="medical-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-            <h3 class="medical-card__title">各種検査</h3>
-            <p class="medical-card__desc">心電図・採血・尿検査・睡眠時無呼吸検査</p>
-          </a>
-          <a href="jihi.html" class="medical-card medical-card--accent">
-            <div class="medical-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <h3 class="medical-card__title">自費診療</h3>
-            <p class="medical-card__desc">予防内服・AGA治療・メディカルダイエットなど</p>
-          </a>
-        </div>
-        <p class="medical-note">上記以外の症状やお悩みについてもお気軽にご相談ください</p>
       </div>
     </section>
 
@@ -234,7 +196,6 @@
     </section>
   </main>
 
-  <!-- モバイル固定CTA -->
   <div class="mobile-cta">
     <a class="mobile-cta__tel" href="tel:0774283101">電話する</a>
     <a class="mobile-cta__reserve" href="https://reserve.peraichi.com/r/3b9daf8d/select_date?course=75106">WEB予約</a>
