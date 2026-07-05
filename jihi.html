@@ -33,7 +33,11 @@
       <div class="brandbar__inner">
         <a class="brandbar__logo" href="index.html">
           <span class="brandbar__icon">
-            <svg width="36" height="36" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="10" fill="#1976d2"/><path d="M24 10v28M14 24h20" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg>
+            <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 2C10.0589 2 2 10.0589 2 20C2 29.9411 10.0589 38 20 38C29.9411 38 38 29.9411 38 20C38 10.0589 29.9411 2 20 2Z" fill="var(--c-primary-light)"/>
+              <path d="M20 8C13.3726 8 8 13.3726 8 20C8 26.6274 13.3726 32 20 32C26.6274 32 32 26.6274 32 20C32 13.3726 26.6274 8 20 8Z" fill="var(--c-primary)"/>
+              <path d="M19 14H21C21.5523 14 22 14.4477 22 15V19H26C26.5523 19 27 19.4477 27 20V22C27 22.5523 26.5523 23 26 23H22V27C22 27.5523 21.5523 28 21 28H19C18.4477 28 18 27.5523 18 27V23H14C13.4477 23 13 22.5523 13 22V20C13 19.4477 13.4477 19 14 19H18V15C18 14.4477 18.4477 14 19 14Z" fill="#FFFFFF"/>
+            </svg>
           </span>
           <span class="brandbar__text">
             <span class="brandbar__name">二宮内科医院</span>
@@ -54,25 +58,25 @@
         <ul class="gnav__list">
           <li>
             <a href="index.html" class="gnav__item">
-              <svg class="gnav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <svg class="gnav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
               <span class="gnav__label">ホーム</span>
             </a>
           </li>
           <li>
             <a href="medical.html" class="gnav__item">
-              <svg class="gnav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <svg class="gnav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
               <span class="gnav__label">診察案内</span>
             </a>
           </li>
           <li>
             <a href="jihi.html" class="gnav__item gnav__item--current">
-              <svg class="gnav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="gnav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13"/><path d="M12 3v19"/><path d="M13 3l3 6-4 13"/><path d="M2 9h20"/></svg>
               <span class="gnav__label">自費診療</span>
             </a>
           </li>
           <li>
             <a href="access.html" class="gnav__item">
-              <svg class="gnav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg class="gnav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               <span class="gnav__label">診療時間・アクセス</span>
             </a>
           </li>
@@ -106,30 +110,27 @@
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
   <main class="page page--sub">
-    <section class="hero" aria-label="自費診療">
-      <div class="hero-inner">
-        <p class="hero__eyebrow">二宮内科医院</p>
-        <h1>自費診療</h1>
-        <div class="hero__ctas">
-          <a class="btn-reserve" href="https://reserve.peraichi.com/r/3b9daf8d/select_date?course=75106">WEB予約はこちら</a>
-          <a class="btn-tel" href="tel:0774283101">お電話でのお問い合わせ</a>
-        </div>
+    <!-- ===== サブページヒーロー ===== -->
+    <section class="subpage-hero subpage-hero--jihi fade-in">
+      <div class="subpage-hero__inner">
+        <h1 class="subpage-hero__title">自費診療</h1>
+        <p class="subpage-hero__sub">self-pay care</p>
       </div>
     </section>
 
-    <section class="block">
-      <h2>自費診療</h2>
-      <h3>当院の自費診療に対する考え方</h3>
+    <!-- ===== 当院の自費診療に対する考え方 ===== -->
+    <section class="block fade-in">
+      <h2>当院の自費診療に対する考え方</h2>
       <p>当院では、保険診療の枠組みだけではカバーしきれないお悩みに対し、自費診療を導入しております。</p>
       <p>自由診療において、私たちが最も大切にしているのは「患者様の安全」と「処方の妥当性」です。</p>
       <p>特にダイエット目的やアンチエイジング目的の薬剤は、本来特定の疾患を治療するためのものです。そのため、血液検査や詳細な問診を行い、医師が「医学的メリットがリスクを上回る」と判断した方にのみ処方をいたします。</p>
       <p>患者様の安全を第一に考えて診療にあたります。そのため、診察結果によっては処方をお断りする場合もございますが、それは皆様の健康を守るための判断であることをご理解いただければ幸いです。</p>
     </section>
 
-    <section class="block">
+    <!-- ===== 予防医療 ===== -->
+    <section class="block fade-in">
       <h2>予防医療</h2>
-      <p>当院では病気になってしまう前に、それを防ぐことを重要としています。</p>
-      <p>早期発見、早期治療をして健康寿命を伸ばしましょう。</p>
+      <p>当院では病気になってしまう前に、それを防ぐことを重要としています。早期発見、早期治療をして健康寿命を伸ばしましょう。</p>
       <ul>
         <li>予防接種</li>
         <li>健康診断</li>
@@ -138,61 +139,198 @@
       </ul>
     </section>
 
-    <section class="block">
-      <h2>予防内服</h2>
-      <h3>【処方メニュー】</h3>
-      <p>※以下の薬剤料に加えて別途、初診料・再診料がかかります。また、必要に応じて検査費用が発生する場合がございます。<br>※記載の薬剤は国内未承認（適応外使用）を含むため、医薬品副作用被害救済制度の対象外となる場合があります。</p>
-      <p>初診料 3000円</p>
-      <p>再診料 750円</p>
-      <p>また薬品の取り寄せの関係がございますので、当日処方が難しい場合が御座います。ご了承ください。</p>
+    <!-- ===== 予防内服 メニュー ===== -->
+    <section class="block fade-in">
+      <h2>予防内服 メニュー</h2>
+      <p>以下の薬剤料に加えて別途、初診料・再診料がかかります。また、必要に応じて検査費用が発生する場合がございます。</p>
+      <p>※記載の薬剤は国内未承認（適応外使用）を含むため、医薬品副作用被害救済制度の対象外となる場合があります。<br>※薬品の取り寄せの関係がございますので、当日処方が難しい場合が御座います。ご了承ください。</p>
 
-      <p>【ビタミンC】</p>
-      <p>・シーピー顆粒 90包 円</p>
-      <p>・シナール：美白・抗酸化・肌トラブル予防　90錠　円</p>
-
-      <p>【トラネキサム酸】</p>
-      <p>肝斑・シミの改善・炎症抑制 ︎500mg 90錠　円</p>
-
-      <p>【ビタミンE（ユベラ）】血行促進・冷えの改善・肌のハリ向上　90錠　円</p>
-
-      <p>【ハイチオール（L-システイン） 】くすみ・肌のターンオーバー促進・疲労回復</p>
-      <p>90錠 円</p>
-
-      <p>【アリナミン（ビタミンB群） 】</p>
-      <p>肌荒れ予防・代謝促進・疲労回復　90錠　円</p>
-
-      <p>【AGA】</p>
-      <p>抜け毛が気になる方、早めのケアを始めたい方へ。</p>
-      <p>・男性</p>
-      <p>フィナステリド　28錠 円</p>
-      <p>・女性</p>
-      <p>スピロノラクトン:30錠　円</p>
-
-      <p>【 二日酔い対策・肝機能サポート】</p>
-      <p>・グルタチオン:90錠　円</p>
-      <p>・ニチファーゲン点滴:円</p>
-
-      <p>【メディカルダイエット】</p>
-      <p>高度肥満など、健康上の理由で減量が必要な方を対象としています。BMI値や採血結果に基づき、慎重に判断いたします。</p>
-      <p>・防風通聖散　30包/1430円</p>
-      <p>• フォシーガ（5mg / 10mg）：30錠　円 / 円</p>
-      <p>• リベルサス（3mg / 7mg ）：30錠　円 / 円</p>
-      <p>• マンジャロ（2.5mg / 5mg ）：円 / 円</p>
-      <p>・メトグルコ(メトホルミン):30錠</p>
-    </section>
-
-    <section class="block back-link">
-      <p><a href="medical.html">← 診療案内ページへ戻る</a></p>
-    </section>
-
-    <aside class="cta-strip" aria-label="お電話・WEBでのご予約">
-      <p>お電話でのご予約・お問い合わせ</p>
-      <p class="cta-strip__tel"><a href="tel:0774283101">TEL 0774-28-3101</a></p>
-      <p>WEBでのご予約はこちら</p>
-      <div class="cta-strip__actions">
-        <a class="btn-reserve" href="https://reserve.peraichi.com/r/3b9daf8d/select_date?course=75106">予約サイトへ</a>
+      <div style="overflow-x:auto; margin:20px 0;">
+        <table>
+          <thead>
+            <tr>
+              <th>診察料</th>
+              <th>価格</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>初診料</th>
+              <td>3,000円</td>
+            </tr>
+            <tr>
+              <th>再診料</th>
+              <td>750円</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </aside>
+
+      <h3>美容・エイジングケア内服</h3>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>薬剤名</th>
+              <th>効果・特徴</th>
+              <th>用量</th>
+              <th>価格</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>ビタミンC (シーピー顆粒)</th>
+              <td>美白・抗酸化・肌トラブル予防</td>
+              <td>90包</td>
+              <td>お問い合わせ</td>
+            </tr>
+            <tr>
+              <th>ビタミンC (シナール)</th>
+              <td>美白・抗酸化・肌トラブル予防</td>
+              <td>90錠</td>
+              <td>お問い合わせ</td>
+            </tr>
+            <tr>
+              <th>トラネキサム酸</th>
+              <td>肝斑・シミの改善・炎症抑制</td>
+              <td>500mg 90錠</td>
+              <td>お問い合わせ</td>
+            </tr>
+            <tr>
+              <th>ビタミンE (ユベラ)</th>
+              <td>血行促進・冷えの改善・肌のハリ向上</td>
+              <td>90錠</td>
+              <td>お問い合わせ</td>
+            </tr>
+            <tr>
+              <th>ハイチオール (L-システイン)</th>
+              <td>くすみ・肌のターンオーバー促進・疲労回復</td>
+              <td>90錠</td>
+              <td>お問い合わせ</td>
+            </tr>
+            <tr>
+              <th>アリナミン (ビタミンB群)</th>
+              <td>肌荒れ予防・代謝促進・疲労回復</td>
+              <td>90錠</td>
+              <td>お問い合わせ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>AGA（男性・女性の薄毛治療）</h3>
+      <p>抜け毛が気になる方、早めのケアを始めたい方へ。</p>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>対象</th>
+              <th>薬剤名</th>
+              <th>用量</th>
+              <th>価格</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>男性</th>
+              <td>フィナステリド</td>
+              <td>28錠</td>
+              <td>お問い合わせ</td>
+            </tr>
+            <tr>
+              <th>女性</th>
+              <td>スピロノラクトン</td>
+              <td>30錠</td>
+              <td>お問い合わせ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>二日酔い対策・肝機能サポート</h3>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>薬剤名・メニュー</th>
+              <th>用量・回数</th>
+              <th>価格</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>グルタチオン</th>
+              <td>90錠</td>
+              <td>お問い合わせ</td>
+            </tr>
+            <tr>
+              <th>ニチファーゲン点滴</th>
+              <td>1回</td>
+              <td>お問い合わせ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>メディカルダイエット</h3>
+      <p>高度肥満など、健康上の理由で減量が必要な方を対象としています。BMI値や採血結果に基づき、慎重に判断いたします。</p>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>薬剤名</th>
+              <th>用量</th>
+              <th>価格</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>防風通聖散</th>
+              <td>30包</td>
+              <td>1,430円</td>
+            </tr>
+            <tr>
+              <th>フォシーガ</th>
+              <td>5mg / 10mg (30錠)</td>
+              <td>お問い合わせ</td>
+            </tr>
+            <tr>
+              <th>リベルサス</th>
+              <td>3mg / 7mg (30錠)</td>
+              <td>お問い合わせ</td>
+            </tr>
+            <tr>
+              <th>マンジャロ</th>
+              <td>2.5mg / 5mg</td>
+              <td>お問い合わせ</td>
+            </tr>
+            <tr>
+              <th>メトグルコ (メトホルミン)</th>
+              <td>30錠</td>
+              <td>お問い合わせ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="back-link fade-in" style="margin-top: 20px;">
+      <a href="medical.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        診療案内ページへ戻る
+      </a>
+    </div>
+
+    <!-- ===== CTA帯 ===== -->
+    <section class="cta-band fade-in" style="margin-top: 40px; border-radius: 16px;">
+      <div class="section__inner">
+        <p class="cta-band__lead">ご予約・お問い合わせ</p>
+        <p class="cta-band__tel"><a href="tel:0774283101">TEL 0774-28-3101</a></p>
+        <div class="cta-band__actions">
+          <a class="btn btn--white btn--lg" href="https://reserve.peraichi.com/r/3b9daf8d/select_date?course=75106">WEB予約はこちら</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div class="mobile-cta">
@@ -205,8 +343,13 @@
       <div class="footer__main">
         <div class="footer__info">
           <p class="footer__name">二宮内科医院</p>
+          <span class="footer__name-en">NINOMIYA INTERNAL MEDICINE CLINIC</span>
           <p class="footer__address">〒611-0042 京都府宇治市小倉町南堀池８－５</p>
           <p class="footer__tel-text"><a href="tel:0774283101">TEL 0774-28-3101</a></p>
+          <div class="footer__schedule">
+            <p class="footer__schedule-title">診療時間</p>
+            <p>9:00 - 12:00 / 17:00 - 19:30<br>休診日：水曜、火土午後、日曜、祝日</p>
+          </div>
         </div>
         <nav class="footer__nav">
           <ul>
@@ -220,6 +363,10 @@
       <p class="footer__copy">Copyright &copy; 二宮内科医院 All Rights Reserved.</p>
     </div>
   </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページトップへ戻る">
+    <svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
 
   <script src="main.js"></script>
 </body>

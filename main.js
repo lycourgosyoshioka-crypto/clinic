@@ -155,3 +155,75 @@
     list.innerHTML = '<li class="news-item"><p class="news-item__text">現在お知らせはありません</p></li>';
   });
 })();
+
+/* ===== スクロール表示アニメーション ===== */
+(function() {
+  var targets = document.querySelectorAll('.fade-in');
+  if (!targets.length) return;
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    targets.forEach(function(el) { observer.observe(el); });
+  } else {
+    targets.forEach(function(el) { el.classList.add('is-visible'); });
+  }
+})();
+
+/* ===== ヘッダースクロール制御 & トップへ戻るボタン ===== */
+(function() {
+  var header = document.querySelector('.header');
+  var backToTop = document.getElementById('backToTop');
+  var lastScrollY = window.scrollY;
+  var ticking = false;
+
+  function updateScroll() {
+    var currentScrollY = window.scrollY;
+    
+    // トップへ戻るボタンの表示/非表示
+    if (backToTop) {
+      if (currentScrollY > 300) {
+        backToTop.classList.add('is-visible');
+      } else {
+        backToTop.classList.remove('is-visible');
+      }
+    }
+
+    // ヘッダーのスクロール制御 (下にスクロールで非表示、上で表示)
+    if (header) {
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+        // 下にスクロール
+        header.classList.add('is-hidden');
+      } else {
+        // 上にスクロール
+        header.classList.remove('is-hidden');
+      }
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScroll);
+      ticking = true;
+    }
+  });
+
+  if (backToTop) {
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+})();
